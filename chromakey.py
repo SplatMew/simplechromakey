@@ -35,15 +35,31 @@ while (True):
     f = np.where(f==0, image, f)
 
     # Mostrar las imágenes en ventanas separadas.
-    cv2.imshow("frame", frame)
-    cv2.imshow("mask", mask)
-    cv2.imshow("result", f)
+    cv2.imshow("Cámara", frame)
+    cv2.imshow("Máscara", mask)
+    cv2.imshow("Resultado", f)
 
     # Esperar 30 milisegundos para una entrada de tecla.
     key = cv2.waitKey(30) & 0xFF
 
     # Si se presiona 'q', salir del bucle.
-    if key == ord('q'):
+
+    if key == ord('1'):
+        image = cv2.imread("beach.jpg")
+
+    elif key == ord('2'):
+        image = cv2.imread("vaporwave.jpg")
+
+    elif key == ord('3'):
+        image = cv2.imread("macaco.jpg")
+    
+    elif key == ord('4'):
+        image = cv2.imread("furby.jpg")
+    
+    elif key == ord('0'):
+        image = cv2.imread("gatitoSorpresa.png")
+
+    elif key == ord('q'):
         break
 
 # Liberar la captura.
